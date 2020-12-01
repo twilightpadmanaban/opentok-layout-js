@@ -513,10 +513,17 @@ var getChildDims = function getChildDims(child) {
   if (child) {
     var video = child.querySelector('video');
     if (video && video.videoHeight && video.videoWidth) {
-      return {
-        height: video.videoHeight,
-        width: video.videoWidth
-      };
+      if (video && video.videoHeight && (video.videoHeight == 640 || video.videoHeight == 320)) {
+        return {
+          height: 480,
+          width: 640
+        };
+      } else {
+        return {
+          height: video.videoHeight,
+          width: video.videoWidth
+        };
+      }
     }
     if (child.videoHeight && child.videoWidth) {
       return {
