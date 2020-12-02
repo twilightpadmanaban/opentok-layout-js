@@ -328,21 +328,21 @@ module.exports = function (opts, elements) {
     var bigWidth = void 0;
     var bigHeight = void 0;
 
-    if (availableRatio > getVideoRatio(bigOnes[0])) {
+    // if (availableRatio > getVideoRatio(bigOnes[0])) {
       // We are tall, going to take up the whole width and arrange small
       // guys at the bottom
       bigWidth = containerWidth;
       bigHeight = Math.floor(containerHeight * bigPercentage);
       offsetTop = bigHeight;
       bigOffsetTop = containerHeight - offsetTop;
-    } else {
-      // We are wide, going to take up the whole height and arrange the small
-      // guys on the right
-      bigHeight = containerHeight;
-      bigWidth = Math.floor(containerWidth * bigPercentage);
-      offsetLeft = bigWidth;
-      bigOffsetLeft = containerWidth - offsetLeft;
-    }
+    // } else {
+    //   // We are wide, going to take up the whole height and arrange the small
+    //   // guys on the right
+    //   bigHeight = containerHeight;
+    //   bigWidth = Math.floor(containerWidth * bigPercentage);
+    //   offsetLeft = bigWidth;
+    //   bigOffsetLeft = containerWidth - offsetLeft;
+    // }
     if (bigFirst) {
       bigBoxes = getLayout({
         containerWidth: bigWidth,
